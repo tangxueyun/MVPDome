@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MVPDome</string>
+    <!--首页-->
+    <string name="homepage">首页</string>
 </resources>
