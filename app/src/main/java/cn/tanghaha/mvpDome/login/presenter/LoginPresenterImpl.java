@@ -1,65 +1,41 @@
 package cn.tanghaha.mvpDome.login.presenter;
 
-import cn.tanghaha.mvpDome.login.OnLoginFinishedListenrer;
+import android.support.annotation.NonNull;
+
 import cn.tanghaha.mvpDome.login.model.LoginModel;
+import cn.tanghaha.mvpDome.login.model.LoginModelImpl;
 import cn.tanghaha.mvpDome.login.view.LoginView;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+
 
 /**
  * 实现LoginPresenter接口，和对登录界面的model层和view层的交互和操作
  * Created by ${user} on 2017/10/11.
  */
 
-public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListenrer
+public class LoginPresenterImpl implements LoginPresenter
 {
     private LoginView loginView = null;
-    private LoginModel loginModel = null;
+    private LoginModelImpl loginModel = null;
 
 
     public LoginPresenterImpl(LoginView loginView)
     {
         this.loginView = loginView;
-        loginModel = new LoginModel();
+        loginModel = new LoginModelImpl();
     }
 
-    public LoginPresenterImpl(LoginView loginView, LoginModel loginModel)
+    public LoginPresenterImpl(@NonNull LoginView loginView, @NonNull LoginModelImpl loginModel)
     {
-        this.loginModel = loginModel;
-        this.loginView = loginView;
+        this.loginView = checkNotNull(loginView, "loginView cannot be null");
+        this.loginModel = checkNotNull(loginModel, "loginModel cannot be null");
     }
 
     @Override
     public void loadStart()
     {
-    }
 
-    @Override
-    public void onSuccess()
-    {
-        if (loginView != null)
-        {
-            loginView.hideProgress();
-            loginView.showLoginInfo();
-        }
-    }
-
-    @Override
-    public void onUserNameError()
-    {
-        if (loginView != null)
-        {
-            loginView.hideProgress();
-            loginView.loginError("用户名错误");
-        }
-    }
-
-    @Override
-    public void onPasswordError()
-    {
-        if (loginView != null)
-        {
-            loginView.hideProgress();
-            loginView.loginError("密码错误");
-        }
     }
 
     @Override
@@ -67,8 +43,39 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
     {
 
         if (loginView != null)
-            loginView.showProgress();
+            loginView.showProgress(true);
 
-        loginModel.login(userName, password, this);
+        loginModel.login(userName, password, new LoginModel.OnLoginFinishedListener()
+        {
+            @Override
+            public void onSuccess()
+            {
+                if (loginView != null)
+                {
+                    loginView.showProgress(false);
+                    loginView.showLoginInfo();
+                }
+            }
+
+            @Override
+            public void onUserNameError()
+            {
+                if (loginView != null)
+                {
+                    loginView.showProgress(false);
+                    loginView.loginError("用户名错误");
+                }
+            }
+
+            @Override
+            public void onPasswordError()
+            {
+                if (loginView != null)
+                {
+                    loginView.showProgress(false);
+                    loginView.loginError("密码错误");
+                }
+            }
+        });
     }
 }

@@ -55,17 +55,12 @@ public class LoginActivity extends BaseActivity implements LoginView
     }
 
     @Override
-    public void showProgress()
+    public void showProgress(boolean isShow)
     {
-        if (dialog == null)
-            dialog = new MyProgressDialog(this);
-        dialog.show();
-    }
-
-    @Override
-    public void hideProgress()
-    {
-        if (dialog != null) dialog.dismiss();
+        if (dialog == null) return;
+        if (isShow)
+            dialog.show();
+        else dialog.dismiss();
     }
 
     @Override

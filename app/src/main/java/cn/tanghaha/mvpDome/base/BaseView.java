@@ -8,14 +8,9 @@ package cn.tanghaha.mvpDome.base;
 public interface BaseView<T>
 {
     /**
-     * 显示进度框的抽象方法
+     * 是否显示进度框的抽象方法
      */
-    void showProgress();
-
-    /**
-     * 隐藏进度框的抽象方法
-     */
-    void hideProgress();
+    void showProgress(boolean b);
 
     /**
      * 显示加载错误进度框的抽象方法
