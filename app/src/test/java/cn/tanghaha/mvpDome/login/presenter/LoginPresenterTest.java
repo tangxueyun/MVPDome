@@ -22,11 +22,11 @@ public class LoginPresenterTest
     private static String USER_NAME = "123456";
     private static String PASSWORD = "123456";
 
-    private LoginPresenterImpl presenter;
+    private LoginPresenter presenter;
     @Mock
     private LoginView view;
     @Mock
-    private LoginModelImpl model;
+    private LoginModel model;
     @Captor
     private ArgumentCaptor<LoginModel.OnLoginFinishedListener> mLoginListenerCaptor;
 
@@ -49,6 +49,7 @@ public class LoginPresenterTest
         mLoginListenerCaptor.getValue().onSuccess();
         verify(view).showProgress(false);
         verify(view).showLoginInfo();
+        verify(view).toHomePage();
     }
 
     @Test

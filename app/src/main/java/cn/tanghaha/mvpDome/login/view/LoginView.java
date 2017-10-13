@@ -8,4 +8,6 @@ public interface LoginView extends BaseView
     void showLoginInfo();
 
     void loginError(String msg);
+
+    void toHomePage();
 }

@@ -69,4 +69,7 @@ dependencies {
     //RxJava
     compile "io.reactivex:rxandroid:$rootProject.ext.rxjavaVersion"
     compile "io.reactivex:rxjava:$rootProject.ext.rxjavaVersion"
+
+    //CoordinatorLayout
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 }

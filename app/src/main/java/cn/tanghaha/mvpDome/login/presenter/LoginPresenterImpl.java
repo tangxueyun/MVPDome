@@ -17,7 +17,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class LoginPresenterImpl implements LoginPresenter
 {
     private LoginView loginView = null;
-    private LoginModelImpl loginModel = null;
+    private LoginModel loginModel = null;
 
 
     public LoginPresenterImpl(LoginView loginView)
@@ -26,7 +26,7 @@ public class LoginPresenterImpl implements LoginPresenter
         loginModel = new LoginModelImpl();
     }
 
-    public LoginPresenterImpl(@NonNull LoginView loginView, @NonNull LoginModelImpl loginModel)
+    public LoginPresenterImpl(@NonNull LoginView loginView, @NonNull LoginModel loginModel)
     {
         this.loginView = checkNotNull(loginView, "loginView cannot be null");
         this.loginModel = checkNotNull(loginModel, "loginModel cannot be null");
@@ -54,6 +54,7 @@ public class LoginPresenterImpl implements LoginPresenter
                 {
                     loginView.showProgress(false);
                     loginView.showLoginInfo();
+                    loginView.toHomePage();
                 }
             }
 

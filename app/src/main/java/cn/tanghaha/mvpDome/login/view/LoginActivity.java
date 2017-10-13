@@ -1,5 +1,6 @@
 package cn.tanghaha.mvpDome.login.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,6 +11,7 @@ import butterknife.OnClick;
 import cn.tanghaha.mvpDome.R;
 import cn.tanghaha.mvpDome.R2;
 import cn.tanghaha.mvpDome.base.BaseActivity;
+import cn.tanghaha.mvpDome.home.view.MainActivity;
 import cn.tanghaha.mvpDome.login.presenter.LoginPresenter;
 import cn.tanghaha.mvpDome.login.presenter.LoginPresenterImpl;
 import cn.tanghaha.mvpDome.weight.MyProgressDialog;
@@ -71,5 +73,11 @@ public class LoginActivity extends BaseActivity implements LoginView
     @Override
     public void hideErrorProgress()
     {
+    }
+
+    @Override
+    public void toHomePage()
+    {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
