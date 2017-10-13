@@ -72,4 +72,10 @@ dependencies {
 
     //CoordinatorLayout
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+
+    //网络框架
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
 }
