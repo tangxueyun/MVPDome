@@ -1,4 +1,4 @@
-package cn.tanghaha.mvpDome.login.presenter;
+package cn.tanghaha.mvpDome.presenter;
 
 import cn.tanghaha.mvpDome.base.BasePresenter;
 

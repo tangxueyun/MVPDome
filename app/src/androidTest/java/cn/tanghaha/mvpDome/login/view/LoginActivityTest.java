@@ -9,14 +9,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import cn.tanghaha.mvpDome.R;
+import cn.tanghaha.mvpDome.activity.LoginActivity;
 
-import static android.R.attr.id;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static org.junit.Assert.*;
 
 /**
  * Created by ${user} on 2017/10/13.

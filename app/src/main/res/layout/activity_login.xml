@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="cn.tanghaha.mvpDome.login.view.LoginActivity">
+    tools:context="cn.tanghaha.mvpDome.activity.LoginActivity">
 
     <EditText
         android:id="@+id/login_username_et"
@@ -26,4 +26,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="登录"/>
+
 </LinearLayout>

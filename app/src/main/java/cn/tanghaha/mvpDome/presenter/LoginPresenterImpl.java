@@ -1,10 +1,10 @@
-package cn.tanghaha.mvpDome.login.presenter;
+package cn.tanghaha.mvpDome.presenter;
 
 import android.support.annotation.NonNull;
 
-import cn.tanghaha.mvpDome.login.model.LoginModel;
-import cn.tanghaha.mvpDome.login.model.LoginModelImpl;
-import cn.tanghaha.mvpDome.login.view.LoginView;
+import cn.tanghaha.mvpDome.model.LoginModel;
+import cn.tanghaha.mvpDome.model.LoginModelImpl;
+import cn.tanghaha.mvpDome.view.LoginView;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

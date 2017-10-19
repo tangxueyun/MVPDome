@@ -7,9 +7,10 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import cn.tanghaha.mvpDome.login.model.LoginModel;
-import cn.tanghaha.mvpDome.login.model.LoginModelImpl;
-import cn.tanghaha.mvpDome.login.view.LoginView;
+import cn.tanghaha.mvpDome.model.LoginModel;
+import cn.tanghaha.mvpDome.view.LoginView;
+import cn.tanghaha.mvpDome.presenter.LoginPresenter;
+import cn.tanghaha.mvpDome.presenter.LoginPresenterImpl;
 
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;

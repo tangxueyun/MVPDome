@@ -1,4 +1,4 @@
-package cn.tanghaha.mvpDome.login.model;
+package cn.tanghaha.mvpDome.model;
 
 import android.text.TextUtils;
 
